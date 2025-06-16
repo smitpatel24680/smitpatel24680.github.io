@@ -10,116 +10,103 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
+      background: #0e0e0e;
+      color: white;
       line-height: 1.6;
     }
     header {
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url('https://images.unsplash.com/photo-1537432376769-00a4c1b2e187?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       text-align: center;
-      padding: 60px 20px;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
     }
     nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
       display: flex;
       justify-content: center;
-      background-color: rgba(0, 95, 163, 0.9);
-      position: sticky;
-      top: 0;
+      background-color: rgba(0, 0, 0, 0.8);
       z-index: 1000;
     }
     nav a {
       color: white;
       padding: 14px 20px;
       text-decoration: none;
+      font-weight: bold;
       transition: background-color 0.3s ease;
     }
     nav a:hover {
-      background-color: #004b82;
-      border-radius: 4px;
+      background-color: #444;
     }
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      margin-bottom: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00ffff;
     }
     .project {
-      background-color: white;
-      margin-bottom: 20px;
+      background-color: #1f1f1f;
+      margin-bottom: 30px;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
     }
     .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: scale(1.02);
     }
     .project img {
       width: 100%;
       border-radius: 8px;
       margin-bottom: 10px;
     }
-    .interactive {
+    .contact a {
+      display: block;
       text-align: center;
-      margin: 40px 0;
-    }
-    .interactive img {
-      width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .interactive img:hover {
-      transform: scale(1.05);
+      color: #00ffff;
+      font-size: 1.2em;
+      margin-bottom: 10px;
     }
     footer {
-      background-color: rgba(0, 122, 204, 0.9);
+      background-color: #000;
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 40px;
-    }
-    h2 {
-      color: #007acc;
-      margin-bottom: 20px;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
     @media (max-width: 768px) {
-      header {
-        padding: 40px 10px;
+      header h1 {
+        font-size: 2em;
       }
-      .interactive img {
-        width: 80%;
+      header p {
+        font-size: 1em;
       }
       nav {
         flex-direction: column;
-      }
-      nav a {
-        padding: 10px;
       }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Smit Patel</h1>
-  <p id="typing"></p>
-</header>
 
 <nav>
   <a href="#about">About</a>
@@ -127,12 +114,14 @@
   <a href="#contact">Contact</a>
 </nav>
 
+<header>
+  <h1>Smit Patel</h1>
+  <p id="typing"></p>
+</header>
+
 <section id="about">
   <h2>About Me</h2>
-  <p>Hello! I'm Smit Patel, a recent Computer Science graduate passionate about Data Engineering, Cloud technologies, and building scalable data pipelines. I am actively looking for full-time opportunities where I can contribute, grow, and learn.</p>
-  <div class="interactive">
-    <img src="https://images.unsplash.com/photo-1581091012184-7acb9a1de29b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Problem Solving">
-  </div>
+  <p style="text-align: center; max-width: 800px; margin: auto;">Hello! I'm Smit Patel, a recent Computer Science graduate passionate about Data Engineering, Cloud technologies, and building scalable data pipelines. I am actively looking for full-time opportunities where I can contribute, grow, and learn.</p>
 </section>
 
 <section id="projects">
@@ -143,7 +132,7 @@
     <h3>Project 1</h3>
     <p><strong>Summary:</strong> Brief description of the project.</p>
     <p><strong>Tech Stack:</strong> Python, AWS, SQL</p>
-    <a href="#">GitHub Link</a>
+    <a href="#" style="color: #00ffff;">GitHub Link</a>
   </div>
 
   <div class="project">
@@ -151,16 +140,18 @@
     <h3>Project 2</h3>
     <p><strong>Summary:</strong> Brief description of the project.</p>
     <p><strong>Tech Stack:</strong> Python, Docker, Airflow</p>
-    <a href="#">GitHub Link</a>
+    <a href="#" style="color: #00ffff;">GitHub Link</a>
   </div>
 
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: smitpatel24680@gmail.com</p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/smit-patel-1506/" target="_blank">Smit Patel</a></p>
-  <p>GitHub: <a href="https://github.com/smitpatel24680" target="_blank">smitpatel24680</a></p>
+  <div class="contact">
+    <a href="mailto:smitpatel24680@gmail.com">smitpatel24680@gmail.com</a>
+    <a href="https://www.linkedin.com/in/smit-patel-1506/" target="_blank">LinkedIn: Smit Patel</a>
+    <a href="https://github.com/smitpatel24680" target="_blank">GitHub: smitpatel24680</a>
+  </div>
 </section>
 
 <footer>
